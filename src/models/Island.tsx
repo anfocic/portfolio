@@ -86,7 +86,6 @@ const Island: React.FC<IslandProps> = (
 
     // This function is called on each frame update
     useFrame(() => {
-        console.log(scale);
         // If not rotating, apply damping to slow down the rotation (smoothly)
         if (!isRotating) {
             // Apply damping factor
