@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
       "target": "es2022",
-      "module": "commonjs",
+      "module": "es2022",
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
@@ -9,12 +9,13 @@
       "outDir": "./dist",
       "jsx": "react-jsx",
       "rootDir": "./src",
+      "moduleResolution": "Node",
       "resolveJsonModule": true
     },
     "include": [
       "src/**/*.ts",
-      "src/**/*.tsx"
-, "src/hooks/useAlert"    ],
+      "src/**/*.tsx",
+      "src/**/*.glb"],
     "exclude": [
       "node_modules"
     ]

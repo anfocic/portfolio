@@ -29,9 +29,7 @@ const Contact = () => {
         setCurrentAnimation("hit");
         emailjs
             .send(
-                //@ts-ignore
                 import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-                //@ts-ignore
                 import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
                 {
                     from_name: form.name,
@@ -40,7 +38,6 @@ const Contact = () => {
                     to_email: "afocic@sent.com",
                     message: form.message,
                 },
-                //@ts-ignore
                 import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
             )
             .then(
@@ -61,7 +58,7 @@ const Contact = () => {
                             message: "",
                         });
                     }, 3000);
-                }).catch((error) => {
+                }).catch(() => {
                 setLoading(false);
                 setCurrentAnimation("idle");
                 showAlert(

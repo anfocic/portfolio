@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 
-export interface CurrentStage {
-    currentStage: number;
-}
 //@ts-ignore
 import { arrow } from "../assets/icons";
+import {CurrentStage} from "../models/models";
 
 const HomeInfo = (currentStage: CurrentStage) => {
     

@@ -11,8 +11,6 @@
 
 import React, {useEffect, useRef} from "react";
 import {useAnimations, useGLTF} from "@react-three/drei";
-//@ts-ignore
-import scene from "../assets/3d/fox.glb";
 import {AnimationAction} from "three";
 
 // 3D Model from: https://sketchfab.com/3d-models/fox-f372c04de44640fbb6a4f9e4e5845c78
@@ -29,11 +27,13 @@ const Fox = (currentAnimation: any, {...props}) => {
     }, [actions, currentAnimation]);
 
     const handleAnimation = (): void => {
-        Object.values(actions).forEach((action: AnimationAction) => {
+        Object.values(actions).forEach((action: AnimationAction | null)=> {
+            if (action instanceof AnimationAction) {
             if (currentAnimation.currentAnimation === 'walk') {
-                action.play()
-            } else {
-                action.stop()
+                    action.play()
+                } else {
+                    action.stop()
+                }
             }
         });
     }
